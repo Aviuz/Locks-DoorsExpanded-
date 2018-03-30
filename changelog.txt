@@ -1,0 +1,19 @@
+Changelog:
+2.1.0
+- added Lock inspector tab for easy use (alternative management)
+- added Lock comp to display text "locked", "unlocked" etc.
+2.0.1
+- fixed some bugs
+2.0.0
+- changed that every change need to be "flicked", instead of locking/unlocking
+- locks now need to be changed by one of new owners
+- added "add pet door", and "remove pet door" that will allow to control whetever small animals should pass the door
+- changed that every change to lock settings when mulitple doors are selected affects all doors
+- added Clutter Structure comaptibility by enabling "unlocking" from Locks mod, other mechanics works as in CS
+- added alert that will trigger when locks can't be changed due to work settings
+1.0.2
+- updated to RimWorld Beta 18 (Rimworld v. 0.18.0)
+1.0.1
+- fixed bug that colonists-prisoners can go through locked doors
+1.0.0
+- initialization
