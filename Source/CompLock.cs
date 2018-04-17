@@ -22,7 +22,7 @@ namespace LocksDoorsExpanded
         {
             string text = "Locks_StatePrefix".Translate() + " ";
 
-            if (LockUtility.GetData((Building_DoorExpanded)this.parent).Locked)
+            if (LockUtility.GetData((Building_DoorExpanded)this.parent).CurrentState.locked)
                 text += "Locks_StateLocked".Translate();
             else
                 text += "Locks_StateUnlocked".Translate();
