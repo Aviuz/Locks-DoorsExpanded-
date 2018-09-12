@@ -79,6 +79,11 @@ namespace LocksDoorsExpanded
             }
             LockUtility.UpdateLockDesignation(parent);
         }
+
+        public bool AssignedAnything(Pawn pawn)
+        {
+            return true;
+        }
         #endregion
 
         public void ExposeData()

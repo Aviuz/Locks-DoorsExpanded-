@@ -127,9 +127,9 @@ namespace LocksDoorsExpanded
             return list;
         }
 
-        public override GizmoResult GizmoOnGUI(Vector2 topLeft)
+        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth)
         {
-            Rect rect = new Rect(topLeft.x, topLeft.y, this.Width, 75f);
+            Rect rect = new Rect(topLeft.x, topLeft.y, this.GetWidth(maxWidth), 75f);
             bool flag = false;
             if (Mouse.IsOver(rect))
             {
@@ -143,7 +143,7 @@ namespace LocksDoorsExpanded
             }
             GUI.DrawTexture(rect, BGTex);
             GUI.DrawTexture(rect, badTex);
-            MouseoverSounds.DoRegion(rect, SoundDefOf.MouseoverCommand);
+            MouseoverSounds.DoRegion(rect, SoundDefOf.Mouseover_Command);
             bool flag2 = false;
             KeyCode keyCode = (this.hotKey != null) ? hotKey.MainKey : KeyCode.None;
             if (keyCode != KeyCode.None && !GizmoGridDrawer.drawnHotKeys.Contains(keyCode))

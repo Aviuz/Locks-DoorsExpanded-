@@ -28,7 +28,7 @@ namespace LocksDoorsExpanded
                     {
                         if (desList[i].def == LockUtility.DesDef)
                         {
-                            if (LockUtility.GetData(desList[i].target.Thing as Building_DoorExpanded).WantedState.Private && !LockUtility.GetData(desList[i].target.Thing as Building_DoorExpanded).WantedState.owners.Any(p => p.workSettings.WorkIsActive(DefDatabase<WorkTypeDef>.GetNamed("Flicker"))))
+                            if (LockUtility.GetData(desList[i].target.Thing as Building_DoorExpanded).WantedState.Private && !LockUtility.GetData(desList[i].target.Thing as Building_DoorExpanded).WantedState.owners.Any(p => p.workSettings.WorkIsActive(DefDatabase<WorkTypeDef>.GetNamed("BasicWorker"))))
                                 yield return desList[i].target.Thing as Building_DoorExpanded;
                         }
                     }

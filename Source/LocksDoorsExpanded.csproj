@@ -31,17 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="0Harmony, Version=1.0.9.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Documents\Visual Studio 2017\ExternalLibraries\RimWorld\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Prison Labor Mod\Source\Libraries\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\Documents\Visual Studio 2017\ExternalLibraries\RimWorld\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DoorsExpanded">
-      <HintPath>.\DoorsExpanded.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>ExternalLibraries\DoorsExpanded.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,7 +49,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\Prison Labor Mod\Source\Libraries\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\Documents\Visual Studio 2017\ExternalLibraries\RimWorld\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -94,6 +93,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\credits.md">
+      <Link>Organizer\credits.md</Link>
+    </None>
     <None Include="..\README.md">
       <Link>Organizer\README.md</Link>
     </None>
