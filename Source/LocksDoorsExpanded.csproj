@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="DoorsExpanded">
       <HintPath>ExternalLibraries\DoorsExpanded.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,6 +75,7 @@
   <ItemGroup>
     <Content Include="..\About\About.xml">
       <Link>Organizer\About.xml</Link>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="..\changelog.txt">
       <Link>Organizer\changelog.txt</Link>
