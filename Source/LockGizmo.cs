@@ -97,10 +97,10 @@ namespace LocksDoorsExpanded
                     })
                     ));
             list.Add(new FloatMenuOption(
-                "CommandBedSetOwnerLabel".Translate(),
+                "Locks_SetOwners".Translate(),
                 new Action(() =>
                 {
-                    Find.WindowStack.Add(new Dialog_AssignBuildingOwner(LockUtility.GetData(parent)));
+                    Find.WindowStack.Add(new Dialog_AssignBuildingOwner(LockUtility.GetData(parent).CompAssignableToPawn));
                     foreach (Building_DoorExpanded door in Find.Selector.SelectedObjects.Where(o => o is Building_DoorExpanded))
                     {
                         if (door != parent)

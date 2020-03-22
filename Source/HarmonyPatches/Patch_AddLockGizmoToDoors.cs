@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Harmony;
+using HarmonyLib;
 using RimWorld;
 using System.Reflection.Emit;
 using Verse;
@@ -34,7 +34,7 @@ namespace LocksDoorsExpanded.HarmonyPatches
 
         public static IEnumerable<Gizmo> AddLockGizmo(IEnumerable<Gizmo> collection, Building_DoorExpanded door)
         {
-            return collection.Add(new LockGizmo(door));
+            return collection.AddItem(new LockGizmo(door));
         }
     }
 }

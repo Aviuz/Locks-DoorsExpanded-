@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Verse;
 using RimWorld;
@@ -8,7 +9,7 @@ using DoorsExpanded;
 
 namespace LocksDoorsExpanded
 {
-    public class LockData : IExposable, IAssignableBuilding
+    public class LockData : IExposable
     {
         private Building_DoorExpanded parent;
 
@@ -37,38 +38,25 @@ namespace LocksDoorsExpanded
         }
         #endregion
 
-        // IAssignableBuilding
-        #region IAssignableBuilding
-        public int MaxAssignedPawnsCount => WantedState.owners.Count + 1;
-
-        public IEnumerable<Pawn> AssignedPawns
+        public CompAssignableToPawn CompAssignableToPawn
         {
             get
             {
-                return WantedState.owners;
+                var comp = parent.GetComp<CompAssignableToPawn>();
+                if (comp == null)
+                {
+                    comp = new CompAssignableToPawn();
+                    comp.parent = parent;
+                    var flags = BindingFlags.NonPublic | BindingFlags.Instance;
+                    var comps = typeof(ThingWithComps).GetField("comps", flags).GetValue(parent) as List<ThingComp>;
+                    comps.Add(comp);
+                    comp.Initialize(new CompProperties_AssignableToPawn() { compClass = typeof(CompAssignableToPawn), drawAssignmentOverlay = false, maxAssignedPawnsCount = 999 });
+                    typeof(CompAssignableToPawn).GetField("assignedPawns", flags).SetValue(comp, WantedState.owners);
+                }
+                return comp;
             }
         }
-
-        public IEnumerable<Pawn> AssigningCandidates
-        {
-            get
-            {
-                return parent.Map.mapPawns.FreeColonists;
-            }
-        }
-
-        public void TryAssignPawn(Pawn pawn)
-        {
-            WantedState.owners.Add(pawn);
-            UpdateOwners();
-        }
-
-        public void TryUnassignPawn(Pawn pawn)
-        {
-            WantedState.owners.Remove(pawn);
-            UpdateOwners();
-        }
-
+        
         public void UpdateOwners()
         {
             foreach (Building_DoorExpanded door in Find.Selector.SelectedObjects.Where(o => o is Building_DoorExpanded && o != parent))
@@ -79,12 +67,6 @@ namespace LocksDoorsExpanded
             }
             LockUtility.UpdateLockDesignation(parent);
         }
-
-        public bool AssignedAnything(Pawn pawn)
-        {
-            return true;
-        }
-        #endregion
 
         public void ExposeData()
         {
