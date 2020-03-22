@@ -43,10 +43,9 @@ namespace LocksDoorsExpanded
             }
         }
 
-        public static bool PawnCanOpen(Building_Door doorHandler, Pawn p)
+        public static bool PawnCanOpen(Building_DoorExpanded door, Pawn p)
         {
             Lord lord = p.GetLord();
-            var door = ((Building_DoorRegionHandler)doorHandler).ParentDoor;
 
             bool canOpenAnyDoor = lord != null && lord.LordJob != null && lord.LordJob.CanOpenAnyDoor(p);
             bool noFaction = door.Faction == null;
