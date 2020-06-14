@@ -2,6 +2,21 @@
 <ModMetaData>
 	<name>Locks (DoorsExpanded)</name>
 	<author>Avius</author>
-	<targetVersion>1.0.0</targetVersion>
-	<description>Version 2.2.1\nThis addon adds Lock command on DoorsExpanded doors.\nUse with Locks mod to include vanilla doors.\n - Left-click to lock toggle.\n - Right click for more options\n - Alternatively you can use "Lock" inspector tab\n\nNote: Door lock must be flicked by colonist.</description>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+  </supportedVersions>
+  <packageId>avius.locksdoorsexpanded</packageId>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+	<description>Version 2.4.0\nThis addon adds Lock command on DoorsExpanded doors.\nUse with Locks mod to include vanilla doors.\n - Left-click to lock toggle.\n - Right click for more options\n - Alternatively you can use "Lock" inspector tab\n\nNote: Door lock must be flicked by colonist.</description>
 </ModMetaData>
